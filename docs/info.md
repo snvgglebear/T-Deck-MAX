@@ -1,17 +1,17 @@
 
-项目有什么功能
+What the project can do
 
-- 墨水屏显示：320x240 EPD，基于 LVGL + GxEPD2，支持整屏/局部刷新。
-- 触摸输入：CST328 触摸控制器。
-- 键盘输入：TCA8418 键盘矩阵。
-- GPS 定位：MIA-M10Q，读取经纬度、时间、卫星数、速度。
-- 音频：ES8311 编解码器，支持播放 WAV；与 A7682E 共用音频输出通道。
-- 电池管理：SY6970/BQ25896 充电管理，BQ27220 电量计。
-- 振动马达：DRV2605，支持不同震动效果。
-- 陀螺仪/IMU：BHI260AP，读取姿态/陀螺数据。
-- Wi‑Fi 扫描：扫描周边热点。
-- SD 卡：容量检测、挂载。
-- 4G 模块：A7682E，支持 AT 指令、拨号/通话测试。
-- LoRa 通信：SX1262，支持收发、频点/带宽/功率设置、内外置天线切换。
-- 蓝牙：BLE 广播/扫描，支持自定义数据。
-- 休眠/关机：关闭各电源域并进入深睡眠。
+- E-paper display: 320x240 EPD, based on LVGL + GxEPD2, with full-screen and partial refresh.
+- Touch input: CST328 touch controller.
+- Keyboard input: TCA8418 keypad matrix.
+- GPS positioning: MIA-M10Q, reading latitude/longitude, time, satellite count and speed.
+- Audio: ES8311 codec with WAV playback; shares the audio output path with the A7682E.
+- Battery management: SY6970/BQ25896 charge management, BQ27220 fuel gauge.
+- Vibration motor: DRV2605, supporting different haptic effects.
+- Gyroscope/IMU: BHI260AP, reading orientation and gyroscope data.
+- Wi-Fi scanning: scan for nearby access points.
+- SD card: capacity detection and mounting.
+- 4G module: A7682E, supporting AT commands and dial/call testing.
+- LoRa communication: SX1262, supporting transmit/receive, frequency/bandwidth/power settings and switching between the internal and external antenna.
+- Bluetooth: BLE advertising and scanning, with custom data.
+- Sleep/shutdown: turn off each power domain and enter deep sleep.

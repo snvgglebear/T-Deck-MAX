@@ -14,7 +14,7 @@
 
 | 正面 | 反面 |
 | :---: | :---: |
-| ![alt text](./docs/image_source/正面.png) | ![alt text](./docs/image_source/反面.png) |
+| ![alt text](./docs/image_source/front.png) | ![alt text](./docs/image_source/back.png) |
 
 ## :zero: 版本更新 🎁
 

@@ -14,7 +14,7 @@
 
 | Front | Back |
 | :---: | :---: |
-| ![alt text](./docs/image_source/正面.png) | ![alt text](./docs/image_source/反面.png) |
+| ![alt text](./docs/image_source/front.png) | ![alt text](./docs/image_source/back.png) |
 
 ## :zero: Version 🎁
 
@@ -30,7 +30,7 @@
 
 - Add the vibration motor driving chip DRV2605
 
-### 1、Version
+### 1. Version
 
 How to confirm that your device is `T-Deck-MAX`?
 
@@ -39,7 +39,7 @@ Download the [WireScan](./firmware/examples/WireScan.bin) firmware and then open
 How to download the firmware? - [click me](./firmware/)
 
 
-### 2、Where to buy.
+### 2. Where to buy.
 
 [LilyGo Store](https://lilygo.cc/products/t-deck-pro)
 
@@ -171,7 +171,7 @@ The following lists all examples to help you quickly get started with each modul
 
 🟢 PlatformIO is recommended because these examples were developed on it. 🟢 
 
-### 1、PlatformIO
+### 1. PlatformIO
 
 1. Install [Visual Studio Code](https://code.visualstudio.com/) and [Python](https://www.python.org/), and clone or download the project;
 2. Search for the `PlatformIO` plugin in the `VisualStudioCode` extension and install it;
@@ -181,7 +181,7 @@ The following lists all examples to help you quickly get started with each modul
 6. Click :ballot_box_with_check: under VScode to compile the project, then plug in USB and select COM under VScode;
 7. Finally, click the :arrow_right:  button to download the program to Flash;
 
-### 2、Arduino IDE
+### 2. Arduino IDE
 
 1. Install [Arduino IDE](https://www.arduino.cc/en/software)
 

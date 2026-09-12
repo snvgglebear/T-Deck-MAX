@@ -41,7 +41,7 @@ At this point, you can use the following AT commands for testing.
 
 | `AT+CSQ`            | Query signal quality, GSM antenna required            |
 | :------------------ | :---------------------------------------------------- |
-| `ATDxxxxxxxxx;`     | Call to dial a number，`xxxxxxxxx` is the phone number |
+| `ATDxxxxxxxxx;`     | Call to dial a number, `xxxxxxxxx` is the phone number |
 | `ATA`               | Call answer                                           |
 | `AT+CHUP`           | Hang up call                                          |
 | `AT+COUTGAIN=(0-7)` | Adjust out gain, 4 is the default value               |

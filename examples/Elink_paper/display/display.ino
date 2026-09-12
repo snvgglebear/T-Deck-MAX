@@ -30,7 +30,7 @@ void setup()
   Serial.println("setup");
   delay(100);
 
-  // LORA、SD、EPD use the same SPI, in order to avoid mutual influence;
+  // LORA, SD and EPD use the same SPI, in order to avoid mutual influence;
   // before powering on, all CS signals should be pulled high and in an unselected state;
   pinMode(BOARD_LORA_CS, OUTPUT); 
   digitalWrite(BOARD_LORA_CS, HIGH);

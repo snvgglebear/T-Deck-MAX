@@ -100,7 +100,7 @@ void ui_lora_set_recv_flag(void)
 //************************************[ screen 2 ]****************************************** setting
 #if 1
 // set function
-// DEFAULT_LANGUAGE_CN、DEFAULT_LANGUAGE_EN
+// DEFAULT_LANGUAGE_CN, DEFAULT_LANGUAGE_EN
 void ui_setting_set_language(int language)
 {
     default_language = language;
@@ -232,7 +232,7 @@ void ui_gps_get_speed(double *speed)
 //************************************[ screen 4 ]****************************************** Wifi Scan
 int is_chinese_utf8(const char *str) {
     unsigned char c = (unsigned char)str[0];
-    return (c >= 0xE0 && c <= 0xEF);  // 检查第一个字节是否在 UTF-8 的中文字符范围内
+    return (c >= 0xE0 && c <= 0xEF);  // Check whether the first byte falls in the UTF-8 range for Chinese characters
 }
 
 void ui_wifi_get_scan_info(ui_wifi_scan_info_t *list, int list_len)

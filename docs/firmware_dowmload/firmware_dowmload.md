@@ -12,7 +12,7 @@ First, plug in the Type-C data cable
 
 
 
-1、 Enter download mode
+1. Enter download mode
 
 :one: Press the "boot" key and do not release it. 
 
@@ -23,12 +23,12 @@ First, plug in the Type-C data cable
 ![alt text](image.png)
 
 
-2、Open the `Flash Download Tools` tool and select from the following figure;
+2. Open the `Flash Download Tools` tool and select from the following figure;
 
 ![alt text](image-1.png)
 
 
-3、Select the program you want to download and click Start key to download it as shown in the image below;
+3. Select the program you want to download and click Start key to download it as shown in the image below;
 
 
 ![alt text](image-2.png)
@@ -39,9 +39,9 @@ First, plug in the Type-C data cable
 
 ---
 
-2、 firmware download
+2. firmware download
 
-下载 flash_download_tools 
+Download flash_download_tools 
 
 
 https://docs.espressif.com/projects/esp-test-tools/en/latest/esp32/production_stage/tools/flash_download_tool.html

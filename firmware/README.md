@@ -12,7 +12,7 @@ First, plug in the Type-C data cable
 
 
 
-1、 Enter download mode
+1. Enter download mode
 
 :one: Press the "boot" key and do not release it. 
 
@@ -23,15 +23,15 @@ First, plug in the Type-C data cable
 ![alt text](../docs/firmware_dowmload/image.png)
 
 
-2、Open the `Flash Download Tools` tool and select from the following figure;
+2. Open the `Flash Download Tools` tool and select from the following figure;
 
 ![alt text](../docs/firmware_dowmload/image-1.png)
 
 
-3、Select the program you want to download and click Start key to download it as shown in the image below;
+3. Select the program you want to download and click Start key to download it as shown in the image below;
 
 
 ![alt text](../docs/firmware_dowmload/image-2.png)
 
 
-4、When the download is complete, click the `RST` button to restart the device;
+4. When the download is complete, click the `RST` button to restart the device;

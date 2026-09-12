@@ -1,11 +1,11 @@
 ﻿
 #include "ui_scr_mrg.h"
 
-/* 记录所有的屏幕卡片 */ 
+/* Registry of all screen cards */ 
 scr_card_t *scr_mgr_head;
 scr_card_t *scr_mgr_top;
 
-/* 被调用屏幕栈 */
+/* Stack of screens currently pushed */
 scr_card_t *scr_stack_root;
 scr_card_t *scr_stack_top;
 
@@ -33,7 +33,7 @@ static lv_obj_t *scr_mgr_default_style(scr_card_t *card)
     return obj;
 }
 
-static scr_card_t *scr_mgr_find_by_id(int id) // 检查链表中没有没此 id 
+static scr_card_t *scr_mgr_find_by_id(int id) // Check whether the list already contains this id 
 {
     scr_card_t *p = scr_mgr_head->next;
     while(p != NULL){
@@ -44,7 +44,7 @@ static scr_card_t *scr_mgr_find_by_id(int id) // 检查链表中没有没此 id
     return NULL;
 }
 
-static scr_card_t *scr_mgr_get_top(scr_card_t *head) // 获取链表最前面的节点 
+static scr_card_t *scr_mgr_get_top(scr_card_t *head) // Get the last node of the list 
 {
     scr_card_t *p = head;
 
@@ -54,7 +54,7 @@ static scr_card_t *scr_mgr_get_top(scr_card_t *head) // 获取链表最前面的
     return p;
 }
 
-static void scr_mgr_active(scr_card_t *card)  // 设置屏幕卡片为活跃状态 
+static void scr_mgr_active(scr_card_t *card)  // Mark the screen card as active
 {
     if(card->st == SCR_MGR_STATE_DESTROYED){
         // card->obj = card->life->create(NULL);
@@ -106,7 +106,7 @@ void scr_mgr_init(void)
     scr_stack_top = NULL;
 }
 
-bool scr_mgr_register(int id, scr_lifecycle_t *card_life) // 注册一个屏幕卡片 
+bool scr_mgr_register(int id, scr_lifecycle_t *card_life) // Register a screen card 
 {
     if(scr_mgr_find_by_id(id)){
         printf("scr already registered\n");
@@ -127,23 +127,23 @@ bool scr_mgr_register(int id, scr_lifecycle_t *card_life) // 注册一个屏幕�
     return true;
 }
 
-bool scr_mgr_switch(int id, bool anim)  // 清空栈，然后切换到指定 id的屏幕卡片上
+bool scr_mgr_switch(int id, bool anim)  // Clear the stack, then switch to the screen card with the given id
 {
     scr_card_t *tgt_card = scr_mgr_find_by_id(id);
     scr_card_t *stack_scr = NULL;
     lv_obj_t *curr_obj = NULL;
 
-    if(tgt_card == NULL) // 没有找到该屏幕
+    if(tgt_card == NULL) // Screen not found
         return false;
 
-    if(scr_stack_top != NULL) { // 如果有多张屏幕卡片叠在一起，就先记录顶层卡片
+    if(scr_stack_top != NULL) { // If several screen cards are stacked, record the top card first
         curr_obj = scr_stack_top->obj;
         stack_scr = scr_stack_top->prev;
         scr_mgr_remove(scr_stack_top);
         lv_mem_free((void *)scr_stack_top);
         scr_stack_top = stack_scr;
     }
-    while(scr_stack_top != NULL) { // 然后清除所有卡片
+    while(scr_stack_top != NULL) { // Then clear all cards
         stack_scr = scr_stack_top->prev;
         curr_obj = scr_stack_top->obj;
         scr_mgr_remove(scr_stack_top);
@@ -162,7 +162,7 @@ bool scr_mgr_switch(int id, bool anim)  // 清空栈，然后切换到指定 id�
     scr_stack_root = stack_scr;
     scr_stack_top = stack_scr;
 
-    scr_mgr_active(stack_scr); // 设置屏幕卡片为活跃状态
+    scr_mgr_active(stack_scr); // Mark the screen card as active
 
     if(scr_anim_sw != LV_SCR_LOAD_ANIM_NONE && anim){
         lv_scr_load_anim(stack_scr->obj, scr_anim_sw, scr_anim_time, 0, true);
@@ -179,11 +179,11 @@ bool scr_mgr_push(int id, bool anim)
     scr_card_t *tgt_card = scr_mgr_find_by_id(id);
     scr_card_t *stack_scr = NULL;
 
-    if(tgt_card == NULL){ // 没有找到该屏幕
+    if(tgt_card == NULL){ // Screen not found
         return false;
     }
 
-    if((scr_stack_top != NULL) && (tgt_card->id == scr_stack_top->id)){ // 当前push屏幕和最顶层屏幕一样
+    if((scr_stack_top != NULL) && (tgt_card->id == scr_stack_top->id)){ // The screen being pushed is already on top
         return false;
     }
 
