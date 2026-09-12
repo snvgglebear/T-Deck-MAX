@@ -1,0 +1,31 @@
+{
+    "name": "T-Deck-MAX (PlatformIO)",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "platformio.platformio-ide"
+            ],
+            "settings": {
+                // Use the PlatformIO Core installed in the image instead of
+                // having the extension install its own copy into a venv.
+                "platformio-ide.useBuiltinPIOCore": false
+            }
+        }
+    },
+    // Needed so the container can open the board's USB-serial port to
+    // build/upload/monitor. Works on Linux hosts (and Windows via WSL2 +
+    // usbipd-win). Docker Desktop on macOS cannot pass through USB devices,
+    // so on macOS you'll still need to flash/monitor from outside the
+    // container.
+    "runArgs": [
+        "--privileged"
+    ],
+    "mounts": [
+        "source=/dev,target=/dev,type=bind"
+    ],
+    "remoteUser": "vscode",
+    "postCreateCommand": "pio pkg update"
+}
